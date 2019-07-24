@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoLive.Web", "CryptoLive.Web\CryptoLive.Web.csproj", "{BD3BB6D5-8EF0-45BE-AA87-918A60AEBF69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoLive.Services", "CryptoLive.Services\CryptoLive.Services.csproj", "{59D9A4F4-7155-4D64-8649-21F5D8256CF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoLive.Models", "CryptoLive.Models\CryptoLive.Models.csproj", "{CF07BA29-42B7-48F5-AAA1-5F98C62F3DA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD3BB6D5-8EF0-45BE-AA87-918A60AEBF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3BB6D5-8EF0-45BE-AA87-918A60AEBF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3BB6D5-8EF0-45BE-AA87-918A60AEBF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3BB6D5-8EF0-45BE-AA87-918A60AEBF69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D9A4F4-7155-4D64-8649-21F5D8256CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D9A4F4-7155-4D64-8649-21F5D8256CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D9A4F4-7155-4D64-8649-21F5D8256CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D9A4F4-7155-4D64-8649-21F5D8256CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF07BA29-42B7-48F5-AAA1-5F98C62F3DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF07BA29-42B7-48F5-AAA1-5F98C62F3DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF07BA29-42B7-48F5-AAA1-5F98C62F3DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF07BA29-42B7-48F5-AAA1-5F98C62F3DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D3B1173-25B8-4659-A54F-BB86C584F069}
+	EndGlobalSection
+EndGlobal
