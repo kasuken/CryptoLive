@@ -29,7 +29,7 @@
                 @foreach (var item in Model.CryptoList)
                 {
 
-                    <tr id="COIN_@item.Long.ToLower()">
+                    @*<tr id="COIN_@item.Long.ToLower()">
                         <td><span class="sprite sprite-@item.Long.ToLower() small_coin_logo"></span> <strong><a href="/home/details/@item.Short">@item.Long</a></strong></td>
                         <td class="market_capital mobile-hide">@item.MktcapDollar</td>
                         <td class="increment price" data-usd="@item.PriceDollar">@item.PriceDollar</td>
@@ -37,7 +37,7 @@
                         <td class="supply mobile-hide">@item.SupplyFormat</td>
                         <td class="increment change mobile-hide">@item.Perc%</td>
                         <td class="actions mobile-hide"><a href="/home/details/@item.Short" class="btn btn-xs btn-default">Coin Info</a></td>
-                    </tr>
+                    </tr>*@
 
                 }
 

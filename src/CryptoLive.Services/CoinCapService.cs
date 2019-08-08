@@ -11,7 +11,7 @@ namespace CryptoLive.Services
 {
     public class CoinCapService : ICoinCapService
     {
-        const string baseAddress = "http://coincap.io";
+        const string baseAddress = "https://api.coincap.io";
 
         public async Task<List<CryptoModel>> RetrieveFrontValues()
         {
@@ -19,18 +19,18 @@ namespace CryptoLive.Services
 
             using (var httpClient = new HttpClient())
             {
-                var frontInfo = await httpClient.GetStringAsync($"{baseAddress}/front");
+                var frontInfo = await httpClient.GetStringAsync($"{baseAddress}/v2/assets");
 
                 list = JsonConvert.DeserializeObject<List<CryptoModel>>(frontInfo);
             }
 
             foreach (var item in list)
             {
-                item.PriceDollar = item.Price.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
-                item.MktcapDollar = item.Mktcap.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
-                item.VolumeDollar = item.Volume.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
+                //item.PriceDollar = item.Price.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
+                //item.MktcapDollar = item.Mktcap.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
+                //item.VolumeDollar = item.Volume.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
 
-                item.SupplyFormat = item.Supply.ToString("N", CultureInfo.CreateSpecificCulture("en-US"));
+                //item.SupplyFormat = item.Supply.ToString("N", CultureInfo.CreateSpecificCulture("en-US"));
             }
 
             return list;

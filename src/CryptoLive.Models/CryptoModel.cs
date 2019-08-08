@@ -8,29 +8,21 @@ namespace CryptoLive.Models
 {
     public class CryptoModel
     {
-        [JsonProperty("cap24hrChange")]
-        public double Cap24HrChange { get; set; }
+        public class Detail
+        {
+            public string id { get; set; }
+            public string rank { get; set; }
+            public string symbol { get; set; }
+            public string name { get; set; }
+            public string supply { get; set; }
+            public string maxSupply { get; set; }
+            public string marketCapUsd { get; set; }
+            public string volumeUsd24Hr { get; set; }
+            public string priceUsd { get; set; }
+            public string changePercent24Hr { get; set; }
+            public string vwap24Hr { get; set; }
+        }
 
-        [JsonProperty("long")]
-        public string Long { get; set; }
-
-        [JsonProperty("mktcap")]
-        public double Mktcap { get; set; }
-
-        public string MktcapDollar { get; set; }
-
-        [JsonProperty("perc")]
-        public double Perc { get; set; }
-
-        [JsonProperty("price")]
-        public double Price { get; set; }
-
-        public string PriceDollar { get; set; }
-
-        [JsonProperty("shapeshift")]
-        public bool Shapeshift { get; set; }
-
-        [JsonProperty("short")]
         public string Short { get; set; }
 
         [JsonProperty("supply")]
