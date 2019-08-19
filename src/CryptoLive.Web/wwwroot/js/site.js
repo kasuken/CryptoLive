@@ -4,11 +4,15 @@
     minimumFractionDigits: 2
 });
 
-const tradeWs = new WebSocket('wss://ws.coincap.io/trades/binance')
+const tradeWs = new WebSocket('wss://ws.coincap.io/trades/binance');
+
+tradeWs.onerror = function (msg) {
+    console.log(msg);
+}
 
 tradeWs.onmessage = function (msg) {
-    updateData(msg.data);
-}
+    console.log(msg.data);
+};
 
 $(document).ready(function () {
     $('#coins').DataTable({

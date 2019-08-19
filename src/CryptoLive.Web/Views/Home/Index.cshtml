@@ -26,18 +26,18 @@
             </thead>
             <tbody>
 
-                @foreach (var item in Model.CryptoList)
+                @foreach (var item in Model.CryptoList.Data)
                 {
 
-                    @*<tr id="COIN_@item.Long.ToLower()">
-                        <td><span class="sprite sprite-@item.Long.ToLower() small_coin_logo"></span> <strong><a href="/home/details/@item.Short">@item.Long</a></strong></td>
-                        <td class="market_capital mobile-hide">@item.MktcapDollar</td>
-                        <td class="increment price" data-usd="@item.PriceDollar">@item.PriceDollar</td>
-                        <td class="volume mobile-hide">@item.VolumeDollar</td>
-                        <td class="supply mobile-hide">@item.SupplyFormat</td>
-                        <td class="increment change mobile-hide">@item.Perc%</td>
-                        <td class="actions mobile-hide"><a href="/home/details/@item.Short" class="btn btn-xs btn-default">Coin Info</a></td>
-                    </tr>*@
+                    <tr id="COIN_@item.symbol.ToLower()">
+                        <td><span class="sprite sprite-@item.name.ToLower() small_coin_logo"></span> <strong><a href="/home/details/@item.symbol">@item.name</a></strong></td>
+                        <td class="market_capital mobile-hide">@item.marketCapUsdStr</td>
+                        <td class="increment price" data-usd="@item.priceUsd">@item.priceUsdStr</td>
+                        <td class="volume mobile-hide">@item.volumeUsd24HrStr</td>
+                        <td class="supply mobile-hide">@item.supplyStr</td>
+                        <td class="increment change mobile-hide">@item.changePercent24HrStr%</td>
+                        <td class="actions mobile-hide"><a href="/home/details/@item.symbol" class="btn btn-xs btn-default">Coin Info</a></td>
+                    </tr>
 
                 }
 

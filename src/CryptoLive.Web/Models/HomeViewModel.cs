@@ -9,6 +9,6 @@ namespace CryptoLive.Models
     {
         public GlobalData GlobalData { get; set; }
 
-        public List<CryptoModel> CryptoList { get; set; }
+        public CryptoModel CryptoList { get; set; }
     }
 }

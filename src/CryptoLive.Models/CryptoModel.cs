@@ -8,40 +8,31 @@ namespace CryptoLive.Models
 {
     public class CryptoModel
     {
-        public class Detail
+        public List<Datum> Data { get; set; }
+        public long timestamp { get; set; }
+
+        public class Datum
         {
             public string id { get; set; }
             public string rank { get; set; }
             public string symbol { get; set; }
             public string name { get; set; }
-            public string supply { get; set; }
-            public string maxSupply { get; set; }
-            public string marketCapUsd { get; set; }
-            public string volumeUsd24Hr { get; set; }
-            public string priceUsd { get; set; }
-            public string changePercent24Hr { get; set; }
-            public string vwap24Hr { get; set; }
+            public double? supply { get; set; }
+            public double? maxSupply { get; set; }
+            public double? marketCapUsd { get; set; }
+            public double? volumeUsd24Hr { get; set; }
+            public double? priceUsd { get; set; }
+            public double? changePercent24Hr { get; set; }
+            public double? vwap24Hr { get; set; }
+
+            public string supplyStr { get; set; }
+            public string maxSupplyStr { get; set; }
+            public string marketCapUsdStr { get; set; }
+            public string volumeUsd24HrStr { get; set; }
+            public string priceUsdStr { get; set; }
+            public string changePercent24HrStr { get; set; }
+            public string vwap24HrStr { get; set; }
         }
-
-        public string Short { get; set; }
-
-        [JsonProperty("supply")]
-        public long Supply { get; set; }
-
-        public string SupplyFormat { get; set; }
-
-        [JsonProperty("usdVolume")]
-        public long UsdVolume { get; set; }
-
-        [JsonProperty("volume")]
-        public long Volume { get; set; }
-
-        public string VolumeDollar { get; set; }
-
-        [JsonProperty("vwapData")]
-        public double VwapData { get; set; }
-
-        [JsonProperty("vwapDataBTC")]
-        public double VwapDataBtc { get; set; }
     }
+
 }

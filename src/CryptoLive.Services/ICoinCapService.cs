@@ -8,7 +8,7 @@ namespace CryptoLive.Services
     {
         Task<CoinDetail> RetrieveCoinDetails(string coin);
         Task<CoinHistory> RetrieveCoinHistory(string coin, int days);
-        Task<List<CryptoModel>> RetrieveFrontValues();
+        Task<CryptoModel> RetrieveFrontValues();
         Task<GlobalData> RetrieveGlobalData();
     }
 }

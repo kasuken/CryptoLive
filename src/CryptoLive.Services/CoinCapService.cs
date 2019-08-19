@@ -13,39 +13,40 @@ namespace CryptoLive.Services
     {
         const string baseAddress = "https://api.coincap.io";
 
-        public async Task<List<CryptoModel>> RetrieveFrontValues()
+        public async Task<CryptoModel> RetrieveFrontValues()
         {
-            var list = new List<CryptoModel>();
+            var cryptoModel = new CryptoModel();
 
             using (var httpClient = new HttpClient())
             {
                 var frontInfo = await httpClient.GetStringAsync($"{baseAddress}/v2/assets");
 
-                list = JsonConvert.DeserializeObject<List<CryptoModel>>(frontInfo);
+                cryptoModel = JsonConvert.DeserializeObject<CryptoModel>(frontInfo);
             }
 
-            foreach (var item in list)
+            foreach (var item in cryptoModel.Data)
             {
-                //item.PriceDollar = item.Price.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
-                //item.MktcapDollar = item.Mktcap.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
-                //item.VolumeDollar = item.Volume.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
+                item.marketCapUsdStr = item.marketCapUsd.Value.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
+                item.priceUsdStr = item.priceUsd.Value.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
+                item.volumeUsd24HrStr = item.volumeUsd24Hr.Value.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
 
-                //item.SupplyFormat = item.Supply.ToString("N", CultureInfo.CreateSpecificCulture("en-US"));
+                item.supplyStr = item.supply.Value.ToString("N", CultureInfo.CreateSpecificCulture("en-US"));
+                item.changePercent24HrStr = item.changePercent24Hr.Value.ToString("N", CultureInfo.CreateSpecificCulture("en-US"));
             }
 
-            return list;
+            return cryptoModel;
         }
 
         public async Task<GlobalData> RetrieveGlobalData()
         {
             var data = new GlobalData();
 
-            using (var httpClient = new HttpClient())
-            {
-                var dataInfo = await httpClient.GetStringAsync($"{baseAddress}/global");
+            //using (var httpClient = new HttpClient())
+            //{
+            //    var dataInfo = await httpClient.GetStringAsync($"{baseAddress}/global");
 
-                data = JsonConvert.DeserializeObject<GlobalData>(dataInfo);
-            }
+            //    data = JsonConvert.DeserializeObject<GlobalData>(dataInfo);
+            //}
 
             return data;
         }
