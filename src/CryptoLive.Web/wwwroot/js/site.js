@@ -11,7 +11,10 @@ tradeWs.onerror = function (msg) {
 }
 
 tradeWs.onmessage = function (msg) {
+    console.clear();
     console.log(msg.data);
+
+    updateData(msg.data);
 };
 
 $(document).ready(function () {
@@ -31,7 +34,7 @@ window.updateData = function (data) {
 
     if (jsonObject.quote !== undefined) {
 
-        var coin = 'COIN_' + jsonObject.quote;
+        var coin = 'COIN_' + jsonObject.base;
         var coin_data = jsonObject;
 
         var _coinTable = $('#coins');
@@ -50,8 +53,20 @@ window.updateData = function (data) {
             $(price).html(_price).removeClass().addClass(_class + ' price').data("usd", _price);
         }
         $(volume).html(formatter.format(coin_data.volume));
-        $(capital).html(formatter.format(coin_data.price_usd));
-        $(supply).html(new Intl.NumberFormat('en-US').format(coin_data.price_usd));
+
+        debugger;
+        if (_class === 'buy') {
+            coin_data.priceUsd = $(capital).html().replace('$', '') + coin_data.priceUsd;
+            $(capital).html(formatter.format(coin_data.priceUsd));
+        }
+        else {
+            coin_data.priceUsd = $(capital).html().replace('$', '') - coin_data.priceUsd;
+            $(capital).html(formatter.format(coin_data.priceUsd));
+        }
+
+        //$(capital).html(formatter.format(coin_data.priceUsd));
+
+        $(supply).html(new Intl.NumberFormat('en-US').format(coin_data.priceUsd));
 
         if (_price !== previous_price) {
             _class = previous_price < _price ? 'increment' : 'decrement';
